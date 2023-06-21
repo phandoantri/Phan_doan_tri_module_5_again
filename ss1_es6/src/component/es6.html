@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let courses = [
+        {
+            id: 1,
+            title: "ReactJS Tutorial",
+            rating: 4.2,
+        },
+        {
+            id: 2,
+            title: "Angular Tutorial",
+            rating: 2.5,
+        },
+        {
+            id: 3,
+            title: "VueJS Tutorial",
+            rating: 3.8,
+        },
+        {
+            id: 4,
+            title: "Java Tutorial",
+            rating: 4,
+        },
+        {
+            id: 5,
+            title: "JavaScript Tutorial",
+            rating: 3.5,
+        }
+    ];
+    let addedCourses = [
+        {
+            id: 6,
+            title: "PHP Tutorial",
+            rating: 3,
+        },
+        {
+            id: 7,
+            title: "C# Tutorial",
+            rating: 2,
+        },
+        {
+            id: 8,
+            title: "Docker Tutorial",
+            rating: 3.8,
+        }
+    ];
+
+    //Tất cả phần tử trong mảng có rating lớn hơn 4
+    let arr = courses.filter((value) => {
+        return value.rating >= 4
+    })
+    console.log(arr);
+
+    //Tất cả phần tử có rating <4
+    let arr1 = courses.filter(a => a.rating < 4);
+    arr1.forEach((word) => {
+        word.id + "-" + word.title + "-" + word.rating
+    });
+    console.log(arr1);
+
+    //function nối 2 mảng
+    function join(a, b) {
+        return [...a, ...b];
+    }
+
+    console.log(join(courses, addedCourses));
+</script>
+</body>
+</html>
