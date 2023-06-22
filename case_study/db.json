@@ -1,0 +1,123 @@
+{
+  "customers": [
+    {
+      "id": 2,
+      "name": "phan doan tri",
+      "dayOfBirth": "04-10-2001",
+      "gender": "Female",
+      "CMND": "13452123",
+      "phoneNumber": "1234567890",
+      "email": "pdtri1996@gmail.com",
+      "typeCustomer": "Gold",
+      "address": "Huế"
+    },
+    {
+      "id": 3,
+      "name": "Nguyen Van C",
+      "dayOfBirth": "05-10-2000",
+      "gender": "Male",
+      "CMND": "12452127",
+      "phoneNumber": "0123456458",
+      "email": "C@gmail.com",
+      "typeCustomer": "Member",
+      "address": "Huế"
+    },
+    {
+      "name": "phan doan tri",
+      "dayOfBirth": "03/08/2000",
+      "gender": "Male",
+      "CMND": "1234566",
+      "phoneNumber": "0123456789",
+      "email": "pdtri1996@gmail.com",
+      "typeCustomer": "Member",
+      "address": "Huế",
+      "id": 4
+    }
+  ],
+  "service": [
+    {
+      "id": 1,
+      "nameService": "Villa",
+      "serviceArea": 1000,
+      "serviceCost": 300,
+      "maxGuest": 5,
+      "rentType": "Tháng",
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg"
+    },
+    {
+      "id": 2,
+      "nameService": "House",
+      "serviceArea": 300,
+      "serviceCost": 300,
+      "maxGuest": 5,
+      "img": "https://furamavillasdanang.com/wp-content/uploads/2017/03/One-Bedroom-Pool-Villa-13-700x400.jpg",
+      "rentType": "Ngày"
+    },
+    {
+      "id": 3,
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Furama_Ocean_Deluxe-2-450x291.jpg",
+      "nameService": "Room",
+      "serviceArea": 100,
+      "serviceCost": 300,
+      "maxGuest": 4,
+      "rentType": "Năm"
+    },
+    {
+      "id": 4,
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Furama_Garden-Deluxe-5-450x291.jpg",
+      "nameService": "Room",
+      "serviceArea": 100,
+      "serviceCost": 300,
+      "maxGuest": 2,
+      "rentType": "Giờ"
+    },
+    {
+      "id": 5,
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Furama_Ocean_Deluxe-2-450x291.jpg",
+      "nameService": "Villa",
+      "serviceArea": 700,
+      "serviceCost": 300,
+      "maxGuest": 10,
+      "rentType": "Tháng"
+    },
+    {
+      "nameService": "Room",
+      "serviceArea": 500,
+      "serviceCost": "500",
+      "maxGuest": 3,
+      "rentType": "Month",
+      "img": "https://furamavillasdanang.com/wp-content/uploads/2017/03/Two-Bedroom-Pool-Villa-12-700x400.jpg",
+      "id": 6
+    }
+  ],
+  "contact": [
+    {
+      "id": 2,
+      "startDate": "2023-07-01",
+      "endDate": "2023-07-31",
+      "deposit": 1500,
+      "totalPayment": 5000
+    },
+    {
+      "id": 3,
+      "startDate": "23-06-2023",
+      "endDate": "24-06-2023",
+      "deposit": 1000,
+      "totalPayment": 6000
+    },
+    {
+      "startDate": "2023-06-13",
+      "endDate": "2023-06-16",
+      "deposit": 500,
+      "totalPayment": 1500,
+      "id": 4
+    },
+    {
+      "startDate": "2023-06-07",
+      "endDate": "2023-06-15",
+      "deposit": 200,
+      "totalPayment": 1000,
+      "id": 5
+    }
+  ]
+}

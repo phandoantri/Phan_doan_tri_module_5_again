@@ -1,62 +1,32 @@
 import React from "react";
+import {posts} from "../data/Data";
 
 export function ListBlog() {
-    const posts = [
-        {
-            title: "5 Best Crypto Performers During The 2022 Market Flop",
-            slug: "5-best-crypto-performers-during-the-2022-market-flop",
-            category: "Crypto News",
-            updatedAt: "21 hours ago"
-        },
-        {
-            title: " Top crypto funding stories of 2022  ",
-            slug: "top-crypto-funding-stories-of-2022",
-            category: "New Year Special",
-            updatedAt: "a day ago"
-        },
-        {
-            title: " 2023 will see the death of play-to-earn gaming ",
-            slug: "2023-will-see-the-death-of-playtoearn-gaming",
-            category: " Opinion",
-            updatedAt: "a day ago"
-        },
-        {
-            title: " US lawmakers under pressure following FTX collapse: Report  ",
-            slug: "us-lawmakers-under-pressure-following-ftx-collapse-report",
-            category: " News",
-            updatedAt: "2 days ago"
-        },
-        {
-            title: "A Crypto Holiday Special: Past, Present, And Future With Material Indicators",
-            slug: "a-crypto-holiday-special-past-present-and-future-with-material-indicators",
-            category: "Interviews",
-            updatedAt: "2 days ago"
-        }
-    ]
-return(
-    <>
-<table border={1}>
-    <thead>
-    <tr>
-        <td>Title</td>
-        <td>Slug</td>
-        <td>Category</td>
-        <td>UpdatedAt</td>
-    </tr>
-    </thead>
-    <tbody>
-    {
-        posts.map((values)=>(
-            <tr>
-                <td>{values.title}</td>
-                <td>{values.slug}</td>
-                <td>{values.category}</td>
-                <td>{values.updatedAt}</td>
-            </tr>
-        ))
-    }
-    </tbody>
-</table>
+
+    return (
+        <>
+            <table border={1}>
+                <thead>
+                <tr>
+                    <td>Title</td>
+                    <td>Slug</td>
+                    <td>Category</td>
+                    <td>UpdatedAt</td>
+                </tr>
+                </thead>
+                <tbody>
+                {
+                    posts.map((values, index) => (
+                        <tr key={index}>
+                            <td>{values.title}</td>
+                            <td>{values.slug}</td>
+                            <td>{values.category}</td>
+                            <td>{values.updatedAt}</td>
+                        </tr>
+                    ))
+                }
+                </tbody>
+            </table>
         </>
-)
+    )
 }
