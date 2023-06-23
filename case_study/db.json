@@ -106,18 +106,18 @@
       "totalPayment": 6000
     },
     {
+      "id": 4,
       "startDate": "2023-06-13",
       "endDate": "2023-06-16",
       "deposit": 500,
-      "totalPayment": 1500,
-      "id": 4
+      "totalPayment": 2000
     },
     {
+      "id": 5,
       "startDate": "2023-06-07",
       "endDate": "2023-06-15",
       "deposit": 200,
-      "totalPayment": 1000,
-      "id": 5
+      "totalPayment": 5000
     }
   ]
 }

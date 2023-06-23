@@ -9,11 +9,11 @@ export function ListPosts() {
     const [nameDelete, setNameDelete] = useState();
     const location = useLocation();
     useEffect(() => {
-        const fetchApi = async () => {
+        const fetch = async () => {
             const result = await postService.findAll();
             setPost(result);
         }
-        fetchApi();
+        fetch();
     }, []);
 
     function deleteByName(id, title) {

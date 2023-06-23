@@ -9,11 +9,11 @@ export function UpdatePost() {
     const param = useParams();
     const [posts, setPost] = useState();
     useEffect(() => {
-        const fetchApi = async () => {
+        const fetch = async () => {
             const result = await postService.getPostById(param.id)
             setPost(result)
         }
-        fetchApi();
+        fetch();
     }, [param.id]);
     if (!posts) {
         return null;
