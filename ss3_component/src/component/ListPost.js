@@ -9,12 +9,13 @@ export function ListPosts() {
     const [nameDelete, setNameDelete] = useState();
     const location = useLocation();
     useEffect(() => {
-        const fetch = async () => {
-            const result = await postService.findAll();
-            setPost(result);
-        }
-        fetch();
+       fetchApi()
     }, []);
+
+    const fetchApi = async () => {
+        const result = await postService.findAll();
+        setPost(result);
+    }
 
     function deleteByName(id, title) {
         setIdDelete(id);
@@ -26,19 +27,6 @@ export function ListPosts() {
         const result = await postService.findAll();
         setPost(result);
     }
-    // useEffect(() => {
-    //     const updatePost = location.state?.updatePost;
-    //     if (updatePost) {
-    //         posts.map((post => {
-    //             if (post.id === updatePost.id) {
-    //                 return updatePost;
-    //             }
-    //             return post;
-    //
-    //         }))
-    //         setPost(updatePost);
-    //     }
-    // }, [location.state?.updatePost]);
 
     return (
         <>
