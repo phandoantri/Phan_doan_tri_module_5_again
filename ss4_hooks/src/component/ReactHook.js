@@ -1,4 +1,4 @@
-import React, {Component, useState} from "react";
+import React, {Component, useEffect, useState} from "react";
 
 // export default class Greeting extends React.Component {
 //
@@ -44,25 +44,31 @@ import React, {Component, useState} from "react";
 //     }
 // }
 export default function Greeting() {
-    const [fistName,setFirstName]=useState('')
-    const [lastName,setLastName]=useState('')
-    return(
+    const [fistName, setFirstName] = useState(localStorage.getItem("firstName") || '');
+    const [lastName, setLastName] = useState(localStorage.getItem("lastName") || '');
+
+    useEffect(() => {
+        localStorage.setItem("firstName", fistName);
+        localStorage.setItem("lastName", lastName);
+    }, [fistName, lastName])
+
+    return (
         <>
-        <input
-        value={fistName}
-        onChange={(e)=>setFirstName(e.target.value)}
-        />
-        <br />
-        <input
-        value={lastName}
-        onChange={(e)=>setLastName(e.target.value)}
-        />
-        <p>
-            Hello {' '}
-            <span>
+            <input
+                value={fistName}
+                onChange={(e) => setFirstName(e.target.value)}
+            />
+            <br/>
+            <input
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+            />
+            <p>
+                Hello {' '}
+                <span>
                 {fistName}{lastName}
             </span>
-        </p>
+            </p>
         </>
     )
 

@@ -1,6 +1,9 @@
 import React, {useEffect, useState} from "react";
 import * as postService from "../service/PostService"
 import {NavLink} from "react-router-dom";
+import "../css/Css.css"
+import {FaTrash, FaEdit, FaInfoCircle} from 'react-icons/fa';
+
 
 export function PostList() {
     const [posts, setPost] = useState([]);
@@ -28,8 +31,9 @@ export function PostList() {
 
     return (
         <>
-            <NavLink to="/create-post">Create new post</NavLink>
-            <table border={1}>
+            <NavLink to="/create-post">Create New Post</NavLink>
+            <h1 style={{textAlign: "center"}}>List Post</h1>
+            <table border={1} className="my-table">
                 <thead>
                 <tr>
                     <th>#</th>
@@ -48,16 +52,18 @@ export function PostList() {
                             <td>{post.category}</td>
                             <td>{post.updatedAt}</td>
                             <td>
-                                <button type="button" className="btn btn-danger" data-bs-toggle="modal"
+                                <button type="button" data-bs-toggle="modal"
                                         data-bs-target="#exampleModal"
-                                        onClick={() => deleteByName(post.id, post.title)}>
-                                    Delete
+                                        onClick={() => deleteByName(post.id, post.title)}
+                                        className="action-icon delete-icon">
+                                    < FaTrash/>
                                 </button>
                                 <button>
-                                    <NavLink to={"/detail/"+post.id}>Detail</NavLink>
+                                    <NavLink to={"/detail/" + post.id}> <FaInfoCircle/></NavLink>
+
                                 </button>
                                 <button>
-                                    <NavLink to={"/update/"+post.id}>Update</NavLink>
+                                    <NavLink to={"/update/" + post.id}><FaEdit/></NavLink>
                                 </button>
 
                             </td>
