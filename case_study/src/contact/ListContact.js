@@ -43,6 +43,5 @@ export function ListContact() {
                 </tbody>
             </table>
             </>
-    )
-
+    );
 }

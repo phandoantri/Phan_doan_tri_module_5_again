@@ -31,7 +31,7 @@ export function CreateService() {
                     <Form>
                         <div className="container">
                             <div className="form-container">
-                                <h1 style={{textAlign: "center"}}>Form Update</h1>
+                                <h1 style={{textAlign: "center"}}>Form Create</h1>
                                 <div className='mb-3'>
                                     <label htmlFor='nameService'>Type service </label>
                                     <Field as='select' name='nameService' id='nameService'>
@@ -71,7 +71,9 @@ export function CreateService() {
                                 </div>
                             </div>
                         </div>
-                        <button type="submit">Create</button>
+                        <div className="d-flex justify-content-center">
+                            <button type="submit" className="btn btn-primary " >Create</button>
+                        </div>
                     </Form>
                 }
 

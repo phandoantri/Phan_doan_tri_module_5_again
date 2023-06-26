@@ -12,21 +12,8 @@ input[type='text'] {
     color: red;
 }
 
-button[type='submit'] {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
 
-button[type='submit']:hover {
-    background-color: #45a049;
-}
+
 
 
 

@@ -31,3 +31,10 @@ export const createService=async (service)=>{
         console.log(err)
     }
 }
+export const deleteService=async (id)=>{
+    try {
+        await axios.delete(`http://localhost:8080/service/${id}`);
+    }catch (err) {
+      console.log(err)
+    }
+}

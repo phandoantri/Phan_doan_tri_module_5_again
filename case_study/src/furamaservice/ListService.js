@@ -1,18 +1,33 @@
 import React, {useEffect, useState} from 'react';
 import * as service from '../service/FuramaService'
 import {NavLink} from "react-router-dom";
+import * as furamaService from "../service/FuramaService"
 
 export function ServiceList() {
-    const [services, setServices] = useState([])
-
+    const [services, setServices] = useState([]);
+    const [idDelete, setIdDelete] = useState();
+    const [nameDelete, setNameDelete] = useState();
 
     useEffect(() => {
-        const fetchApi = async () => {
-            const result = await service.findAll();
-            setServices(result);
-        }
         fetchApi();
     }, [])
+
+    const fetchApi = async () => {
+        const result = await service.findAll();
+        setServices(result);
+    }
+
+
+    function handleDelete(id, nameService) {
+        setIdDelete(id);
+        setNameDelete(nameService);
+    }
+
+       const deleteById= async (idDelete)=>{
+           await furamaService.deleteService(idDelete);
+           const result=await furamaService.findAll();
+           setServices(result);
+       }
 
 
     return (
@@ -49,37 +64,38 @@ export function ServiceList() {
                                         <p className="card-text">Max People :{values.maxGuest}</p>
                                         <NavLink to={"/update-service/" + values.id}
                                                  className="btn btn-primary">Sửa</NavLink>
-                                        <button type="button" className="btn btn-danger" data-toggle="modal"
-                                                data-target="#deleteModal1">Xoá
+                                        <button type="button" className="btn btn-danger" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal"  onClick={() => handleDelete(values.id, values.nameService)}>
+                                            Xóa
                                         </button>
+
                                     </div>
                                 </div>
                             </div>
                         ))}
                 </div>
             </div>
-            <div className="modal fade" id="deleteModal3" tabIndex="-1" role="dialog"
-                 aria-labelledby="deleteModalLabel3"
+            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel"
                  aria-hidden="true">
-                <div className="modal-dialog" role="document">
+                <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="deleteModalLabel3">Xác nhận Xoá dịch vụ</h5>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                            <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            <p>Bạn có chắc chắn muốn xoá dịch vụ này?</p>
+                            Ban co muon xoa <span style={{color:"red"}}>{nameDelete}</span>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                            <button type="button" className="btn btn-danger">Xoá</button>
+                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                            <button type="submit" className="btn btn-danger" data-bs-dismiss="modal" onClick={()=>deleteById(idDelete)}>Xóa</button>
                         </div>
                     </div>
                 </div>
             </div>
-
         </>
     )
 }
+
+

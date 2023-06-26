@@ -38,12 +38,12 @@ export function UpdateService() {
                 }}
             >
                 {
-                    <div>
+
                         <Form>
                             <div className="container">
                                 <div className="form-container">
                                     <h1 style={{textAlign: "center"}}>Form Update</h1>
-                                    <div className='mb-3'>
+                                    <div className='mb-6'>
                                         <label htmlFor='nameService'>Type service </label>
                                         <Field as='select' name='nameService' id='nameService'>
                                             <option value='Villa'>Villa</option>
@@ -80,12 +80,15 @@ export function UpdateService() {
                                             <option value='Giờ'>Giờ</option>
                                         </Field>
                                     </div>
-                                </div>
-                                <div className="image-container"></div>
+                                    <div className="d-flex justify-content-center">
+                                        <button type="submit" className="btn btn-primary " >Update</button>
+                                    </div>
+
+                                    <div className="image-container"></div>
                             </div>
-                            <button type="submit">Update</button>
+                            </div>
                         </Form>
-                    </div>
+
 
                 }
 
