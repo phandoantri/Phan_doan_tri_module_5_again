@@ -23,3 +23,10 @@ export const updateContact=async (id,contact)=>{
         console.log(err)
     }
 }
+export const createContact=async (contact)=>{
+    try {
+        await axios.post("http://localhost:8080/contact",contact);
+    }catch (e) {
+        console.log(e)
+    }
+}

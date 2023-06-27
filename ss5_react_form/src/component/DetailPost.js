@@ -21,44 +21,31 @@ export function DetailPost(){
    return(
        <>
            <NavLink to="/">List Post Return</NavLink>
-           <Formik
-               initialValues={{
-                   id: post?.id,
-                   title: post?.title,
-                   slug: post?.slug,
-                   category: post?.category,
-                   content: post?.content,
-                   updatedAt:post?.updatedAt
-               }}
-           >
                {
                    <div className="container">
-                       <Form>
                            <div>
                                <div><label htmlFor="title">Title</label></div>
-                               <div><Field name="title" id="title" readOnly/></div>
+                               <div>{post.updatedAt}</div>
                            </div>
 
                            <div>
                                <div><label htmlFor="slug">Slug</label></div>
-                               <div><Field name="slug" id="slug" readOnly/></div>
+                               <div>{post.title}</div>
                            </div>
                            <div>
                                <div><label htmlFor="category">Category</label></div>
-                               <div><Field name="category" id="category" readOnly/></div>
+                               <div>{post.slug}</div>
                            </div>
                            <div>
                                <div><label htmlFor="content">Content</label></div>
-                               <div><Field as="textarea" name="content" id="content" readOnly/></div>
+                               <div>{post.category}</div>
                            </div>
                            <div>
                                <div><label htmlFor="updatedAt">UpdatedAt</label></div>
-                               <div><Field type="text" name="updatedAt" id="updatedAt" readOnly/></div>
+                               <div>{post.content}</div>
                            </div>
-                       </Form>
                    </div>
                }
-           </Formik>
            </>
    )
 

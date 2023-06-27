@@ -1,17 +1,6 @@
 {
   "customers": [
     {
-      "id": 2,
-      "name": "phan doan tri",
-      "dayOfBirth": "04-10-2001",
-      "gender": "Female",
-      "CMND": "13452123",
-      "phoneNumber": "1234567890",
-      "email": "pdtri1996@gmail.com",
-      "typeCustomer": "Gold",
-      "address": "Da Nang"
-    },
-    {
       "id": 3,
       "name": "Nguyen Van C",
       "dayOfBirth": "05-10-2000",
@@ -118,6 +107,13 @@
       "endDate": "2023-06-15",
       "deposit": 200,
       "totalPayment": 5000
+    },
+    {
+      "startDate": "2023-06-16",
+      "endDate": "2023-06-17",
+      "deposit": 100,
+      "totalPayment": 5000,
+      "id": 6
     }
   ]
 }

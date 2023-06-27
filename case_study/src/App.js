@@ -12,6 +12,7 @@ import {CreateCustomer} from "./customer/CreateCustomer";
 import {EditCustomer} from "./customer/UpdateCustomer";
 import {ListContact} from "./contact/ListContact";
 import {UpdateContact} from "./contact/UpdateContact";
+import {CreateContact} from "./contact/CreateContact";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
                 <Route path="/create-customer" element={<CreateCustomer/>}/>
                 <Route path="update-customer/:id" element={<EditCustomer/>}/>
                 <Route path="contact" element={<ListContact/>}/>
+                <Route path="create-contact" element={<CreateContact/>}/>
                 <Route path="update-contact/:id" element={<UpdateContact/>}/>
             </Routes>
             <Footer/>

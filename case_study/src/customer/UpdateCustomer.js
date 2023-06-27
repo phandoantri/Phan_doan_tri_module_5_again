@@ -120,7 +120,7 @@ export function EditCustomer() {
                                         name="address"
                                     />
                                 </div>
-                                <button type="submit">Update</button>
+                                <button type="submit" className="btn btn-primary">Update</button>
                             </Form>
                         </div>
                     </div>

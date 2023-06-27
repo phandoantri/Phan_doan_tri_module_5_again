@@ -2,10 +2,12 @@ import * as customerService from "../service/CustomerService"
 import {useLocation} from "react-router";
 import React, {useEffect, useState} from "react";
 import {NavLink} from "react-router-dom";
+import {FaTrash, FaEdit, FaInfoCircle} from 'react-icons/fa';
 
     export function CustomerList() {
     const [customerList, setCustomerList] = useState([])
-
+const [idDelete,setIdDelete]=useState();
+    const [nameDelete,setNameDelete]=useState();
     useEffect(() => {
         const fetchApi = async () => {
             const result = await customerService.findAll();
@@ -20,26 +22,19 @@ import {NavLink} from "react-router-dom";
         const result1 = await customerService.findAll();
         setCustomerList(result1)
     }
-    // useEffect(() => {
-    //     const updateCustomer = location.state?.updateCustomer;
-    //     if (updateCustomer) {
-    //         const updateList = customerList.map((customer) => {
-    //             if (customer.id === customerList.id) {
-    //                 return updateCustomer;
-    //             }
-    //             return customer;
-    //         })
-    //         setCustomerList(updateCustomer)
-    //     }
-    // }, [location.state?.updateCustomer])
 
-    return (
+        function deleteByName(id, name) {
+            setIdDelete(id)
+            setNameDelete(name)
+        }
+
+        return (
 
         <>
             <NavLink to='/create-customer'>Create new customer</NavLink>
             <h1 style={{textAlign: 'center'}}>CUSTOMER LIST</h1>
             <div className="container">
-                <table border={1}>
+                <table>
                     <tbody>
                     <tr>
                         <th>No</th>
@@ -65,15 +60,41 @@ import {NavLink} from "react-router-dom";
                             <td>{customer.typeCustomer}</td>
                             <td>{customer.address}</td>
                             <td>
-                                <button className="btn btn-danger" onClick={() => deleteCustomer(customer.id)}>Xoá
+                                <button type="button" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"
+                                        onClick={() => deleteByName(customer.id, customer.name)}
+                                        className="action-icon delete-icon btn-danger">
+                                    < FaTrash/>
                                 </button>
                                 <button>
-                                    <NavLink to={"/update-customer/" + customer.id}>Update</NavLink>
+                                    <NavLink to={"/update-customer/" + customer.id}><FaEdit/></NavLink>
                                 </button>
                             </td>
                         </tr>
                     ))}
                     </tbody>
+                    <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel"
+                         aria-hidden="true">
+                        <div className="modal-dialog">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" className="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div className="modal-body">
+                                    Do you want delete <span style={{color: "red"}}>{nameDelete}</span>
+                                </div>
+                                <div className="modal-footer">
+                                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close
+                                    </button>
+                                    <button type="submit" className="btn btn-primary" data-bs-dismiss="modal"
+                                            onClick={() => deleteCustomer(idDelete)}>Save changes
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </table>
             </div>
         </>

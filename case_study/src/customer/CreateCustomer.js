@@ -49,7 +49,7 @@ export function CreateCustomer() {
                             </div>
                             <div>
                                 <label>Day of Birth:</label>
-                                <Field type="text" name="dayOfBirth"/>
+                                <Field type="date" name="dayOfBirth"/>
                                 <ErrorMessage name="dayOfBirth" className="err-message"/>
                             </div>
                             <div>
@@ -95,7 +95,10 @@ export function CreateCustomer() {
                                 <Field type="text" name="address"/>
                                 <ErrorMessage name="address" className="err-message"/>
                             </div>
-                            <button type="submit" style={{width: '100px'}}>Add</button>
+                            <div className="d-flex justify-content-center">
+                                <button type="submit" style={{width: '100px'}}>Add</button>
+                            </div>
+
                         </Form>
                     </div>
                 }

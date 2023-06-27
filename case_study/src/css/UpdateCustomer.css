@@ -40,5 +40,10 @@
 .button-container {
     text-align: right;
 }
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
