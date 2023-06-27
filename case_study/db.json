@@ -26,7 +26,8 @@
   "service": [
     {
       "id": 1,
-      "nameService": "Villa",
+      "title": "Phòng hướng biển",
+      "nameService": "Room",
       "serviceArea": 1000,
       "serviceCost": 300,
       "maxGuest": 5,
@@ -35,6 +36,7 @@
     },
     {
       "id": 2,
+      "title": "Phòng hướng biển",
       "nameService": "House",
       "serviceArea": 300,
       "serviceCost": 300,
@@ -44,6 +46,7 @@
     },
     {
       "id": 3,
+      "title": "Phòng hướng biển",
       "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Furama_Ocean_Deluxe-2-450x291.jpg",
       "nameService": "Room",
       "serviceArea": 100,
@@ -53,6 +56,7 @@
     },
     {
       "id": 4,
+      "title": "Phòng hướng biển",
       "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Furama_Garden-Deluxe-5-450x291.jpg",
       "nameService": "Room",
       "serviceArea": 100,
@@ -62,6 +66,7 @@
     },
     {
       "id": 5,
+      "title": "Phòng hướng biển",
       "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Furama_Ocean_Deluxe-2-450x291.jpg",
       "nameService": "Villa",
       "serviceArea": 700,
@@ -70,10 +75,11 @@
       "rentType": "Tháng"
     },
     {
-      "nameService": "Room",
-      "serviceArea": 500,
+      "title": "Phòng hướng biển",
+      "nameService": "House",
+      "serviceArea": 100,
       "serviceCost": "500",
-      "maxGuest": 3,
+      "maxGuest": 12,
       "rentType": "Month",
       "img": "https://furamavillasdanang.com/wp-content/uploads/2017/03/Two-Bedroom-Pool-Villa-12-700x400.jpg",
       "id": 6

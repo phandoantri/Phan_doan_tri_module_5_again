@@ -30,6 +30,7 @@ export function CreateContact() {
         >
             {
                 <Form>
+                    <h1 style={{textAlign:"center"}}>Create Contact</h1>
                     <div className="form-group">
                         <label htmlFor="startDate">Start day</label>
                         <Field type="date"

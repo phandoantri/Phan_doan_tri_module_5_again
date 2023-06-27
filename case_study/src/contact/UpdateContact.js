@@ -14,30 +14,32 @@ export function UpdateContact() {
         }
         fetchApi();
     }, []);
-    if (!contacts){
+    if (!contacts) {
         return null;
     }
     return (
         <>
             <Formik
                 initialValues={{
-                    id:contacts?.id,
-                    startDate:contacts?.startDate,
-                    endDate:contacts?.endDate,
-                    deposit:contacts?.deposit,
-                    totalPayment:contacts?.totalPayment
+                    id: contacts?.id,
+                    startDate: contacts?.startDate,
+                    endDate: contacts?.endDate,
+                    deposit: contacts?.deposit,
+                    totalPayment: contacts?.totalPayment
                 }}
-                onSubmit={(values)=>{
-                    const update=async ()=>{
-                        await contactService.updateContact(param.id,values);
+                onSubmit={(values) => {
+                    const update = async () => {
+                        await contactService.updateContact(param.id, values);
                         navigate("/contact")
                     }
                     update();
                 }}
             >
                 {
+
                     <div className="container">
                         <Form>
+                            <h1 style={{textAlign: "center"}}>Update contact</h1>
                             <div>
                                 <div><label htmlFor="startDate">Start Date</label></div>
                                 <div><Field type="text" name="startDate" id="startDate"/></div>

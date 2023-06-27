@@ -63,9 +63,9 @@ export function CreateService() {
                                 <div className='mb-3'>
                                     <label htmlFor='rentType'>Type service </label>
                                     <Field as='select' name='rentType' id='rentType'>
-                                        <option value='Year'>Năm</option>
-                                        <option value='Month'>Tháng</option>
-                                        <option value='Day'>Ngày</option>
+                                        <option value='Năm'>Năm</option>
+                                        <option value='Tháng'>Tháng</option>
+                                        <option value='Ngày'>Ngày</option>
                                         <option value='Giờ'>Giờ</option>
                                     </Field>
                                 </div>

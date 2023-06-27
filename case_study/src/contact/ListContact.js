@@ -16,9 +16,10 @@ export function ListContact() {
     return(
         <>
             <h1 style={{textAlign:"center"}}>Contact List</h1>
-            <NavLink to="/create-contact">Create new contact</NavLink>
+            <NavLink className="btn btn-primary" to="/create-contact" style={{marginLeft: "6%" ,
+                marginBottom:"2%"}}>Create new contact</NavLink>
             <div className="container">
-                <table>
+                <table className='table table-primary'>
                     <thead>
                     <tr>
                         <th>Contact code</th>

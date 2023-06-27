@@ -31,11 +31,12 @@ const [idDelete,setIdDelete]=useState();
         return (
 
         <>
-            <NavLink to='/create-customer'>Create new customer</NavLink>
             <h1 style={{textAlign: 'center'}}>CUSTOMER LIST</h1>
+            <NavLink to='/create-customer' className="btn btn-primary" style={{marginLeft: "6%" ,
+                marginBottom:"2%"}}>Create new customer</NavLink>
             <div className="container">
-                <table>
-                    <tbody>
+                <table className='table table-primary'>
+                    <thead>
                     <tr>
                         <th>No</th>
                         <th>Name</th>
@@ -48,6 +49,8 @@ const [idDelete,setIdDelete]=useState();
                         <th>Address</th>
                         <th>Actions</th>
                     </tr>
+                    </thead>
+                    <tbody>
                     {customerList.map((customer) => (
                         <tr key={customer.id}>
                             <td>{customer.id}</td>

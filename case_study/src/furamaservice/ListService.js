@@ -47,7 +47,8 @@ export function ServiceList() {
                     className="vc_custom_heading">LOẠI PHÒNG</h2>
             </div>
             <h1 className="text-center mt-5">Furama Services</h1>
-            <NavLink to="/create-service">Create New Service</NavLink>
+            <NavLink  to="/create-service" className="btn btn-primary" style={{marginLeft: "6%" ,
+                marginBottom:"2%"}}>Create New Service</NavLink>
             <div className="container">
                 <div className="row row-cols-1 row-cols-md-3 g-4">
                     {
@@ -59,11 +60,12 @@ export function ServiceList() {
                                         src={values.img}
                                         className="card-img-top" alt="Service 1" width={370} height={240}/>
                                     <div className="card-body">
-                                        <h5 className="card-title">Service Type:{values.nameService}</h5>
+                                        <h5 className="card-title">Type :{values.title}</h5>
+                                        <p className="card-text">Name Service :{values.nameService}</p>
                                         <p className="card-text">Service Area :{values.serviceArea}m2</p>
                                         <p className="card-text">Max People :{values.maxGuest}</p>
                                         <NavLink to={"/update-service/" + values.id}
-                                                 className="btn btn-primary">Sửa</NavLink>
+                                                 className="btn btn-primary m-1">Sửa</NavLink>
                                         <button type="button" className="btn btn-danger" data-bs-toggle="modal"
                                                 data-bs-target="#exampleModal"  onClick={() => handleDelete(values.id, values.nameService)}>
                                             Xóa
