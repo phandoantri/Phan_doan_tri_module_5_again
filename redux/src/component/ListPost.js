@@ -1,45 +1,43 @@
-import React, {useEffect, useState} from "react";
-import * as postService from "../service/PostService"
+import {useDispatch, useSelector} from "react-redux";
+import React, {useEffect} from "react";
+import {findAll} from "../redux/action/post";
 import {NavLink} from "react-router-dom";
 
+
 export function ListPost() {
-    const [posts, setPost] = useState([]);
+    const posts = useSelector(state => state.posts);
+    const dispatch = useDispatch();
     useEffect(() => {
-        fetchApi();
-    }, []);
-    const fetchApi = async () => {
-        const result = await postService.findAll();
-        setPost(result);
-    }
+        dispatch(findAll())
+    }, [])
     return (
         <>
             <NavLink to="create">Create new post</NavLink>
-            <table className="table" border={1}>
+            <table>
                 <thead>
                 <tr>
                     <th>#</th>
                     <th>Title</th>
-                    <th>Thumbnail URL</th>
                     <th>Slug</th>
                     <th>Category</th>
+                    <th>Thumbnail URL</th>
                 </tr>
                 </thead>
                 <tbody>
                 {
                     posts.map((post) => (
                         <tr key={post.id}>
-                            <td scope="row">{post.id}</td>
+                            <td>{post.id}</td>
                             <td>{post.title}</td>
-                            <td>{post.thumbnail_url}</td>
                             <td>{post.slug}</td>
                             <td>{post.category}</td>
+                            <td>{post.thumbnail_url}</td>
                         </tr>
                     ))
                 }
-
                 </tbody>
             </table>
+
         </>
     )
-
 }

@@ -1,0 +1,42 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "sting",
+      "type": "2",
+      "cost": 12000
+    },
+    {
+      "id": 2,
+      "name": "coca",
+      "type": "1",
+      "cost": 11000
+    },
+    {
+      "id": 3,
+      "name": "aqua",
+      "type": "3",
+      "cost": 15000
+    },
+    {
+      "name": "energy",
+      "type": "2",
+      "cost": 17000,
+      "id": 4
+    }
+  ],
+  "typeProduct": [
+    {
+      "id": "1",
+      "name": "có gas"
+    },
+    {
+      "id": "2",
+      "name": "tăng lực"
+    },
+    {
+      "id": "3",
+      "name": "Không có gas"
+    }
+  ]
+}

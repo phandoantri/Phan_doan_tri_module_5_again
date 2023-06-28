@@ -56,8 +56,9 @@ export function UpdateContact() {
                                 <div><label htmlFor="totalPayment">Total payment</label></div>
                                 <div><Field type="number" name="totalPayment" id="totalPayment"/></div>
                             </div>
-                            <button type="submit">Update</button>
-
+                            <div className="d-flex justify-content-center">
+                                <button type="submit" className="btn btn-primary">Update</button>
+                            </div>
                         </Form>
                     </div>
 

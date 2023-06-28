@@ -120,7 +120,9 @@ export function EditCustomer() {
                                         name="address"
                                     />
                                 </div>
-                                <button type="submit" className="btn btn-primary">Update</button>
+                                <div className="d-flex justify-content-center">
+                                    <button type="submit" className="btn btn-primary">Update</button>
+                                </div>
                             </Form>
                         </div>
                     </div>
