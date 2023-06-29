@@ -8,6 +8,8 @@ import {FaTrash, FaEdit, FaInfoCircle} from 'react-icons/fa';
     const [customerList, setCustomerList] = useState([])
 const [idDelete,setIdDelete]=useState();
     const [nameDelete,setNameDelete]=useState();
+        const [page, setPage] = useState(1);
+        const [limit, setLimit] = useState(10);
     useEffect(() => {
         const fetchApi = async () => {
             const result = await customerService.findAll();
@@ -75,6 +77,8 @@ const [idDelete,setIdDelete]=useState();
                             </td>
                         </tr>
                     ))}
+                    <button onClick={() => setPage(page - 1)} disabled={page === 1}>Previous Page</button>
+                    <button onClick={() => setPage(page + 1)}>Next Page</button>
                     </tbody>
                     <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel"
                          aria-hidden="true">
